@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>こっから 千葉店 | 千葉駅・千葉中央駅近くの和み居酒屋</title>
+<title>こっから 千葉店 | 千葉郷土料理と地酒・鮮魚居酒屋</title>
 <style>
 * {
   box-sizing: border-box;
@@ -54,7 +54,7 @@ nav a:hover {
 /* ヒーローセクション */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,12 +90,12 @@ nav a:hover {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 50px 20px;
 }
 .section-title {
   text-align: center;
   font-size: 1.8rem;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   position: relative;
   color: #1a1a1a;
 }
@@ -107,57 +107,89 @@ nav a:hover {
   background-color: #d4af37;
   margin: 10px auto 0;
 }
-/* こだわり */
-.concept-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-.concept-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  border-top: 3px solid #d4af37;
-}
-.concept-card h3 {
+.sub-title {
   font-size: 1.2rem;
-  margin-bottom: 12px;
+  margin: 30px 0 15px;
+  padding-left: 10px;
+  border-left: 4px solid #d4af37;
   color: #1a1a1a;
 }
-/* メニュー */
-.menu-table {
-  width: 100%;
-  border-collapse: collapse;
+/* メニューカード */
+.menu-card {
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 5px solid #d4af37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
-.menu-table th, .menu-table td {
-  padding: 15px 20px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+.menu-info {
+  flex: 1;
+  min-width: 250px;
 }
-.menu-table th {
-  background-color: #1a1a1a;
-  color: #d4af37;
-  font-weight: normal;
-}
-.category-tag {
+.menu-tag {
   display: inline-block;
-  background-color: #f0ede6;
-  color: #555;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  margin-bottom: 4px;
-}
-.price {
+  background-color: #d4af37;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 6px;
   font-weight: bold;
-  color: #8b0000;
-  white-space: nowrap;
 }
+.menu-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+.menu-desc {
+  font-size: 0.85rem;
+  color: #666;
+}
+.menu-price {
+  text-align: right;
+  min-width: 120px;
+}
+.price-val {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #a80000;
+}
+.price-unit {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* 単品メニューリスト */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+.item-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-name {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.item-price {
+  font-weight: bold;
+  color: #a80000;
+}
+
 /* 店舗情報 */
 .info-table {
   width: 100%;
@@ -178,6 +210,7 @@ nav a:hover {
   padding: 15px;
   border-bottom: 1px solid #ddd;
 }
+
 /* フッター */
 footer {
   background-color: #1a1a1a;
@@ -189,6 +222,8 @@ footer {
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.6rem; }
   nav { display: none; }
+  .menu-card { flex-direction: column; align-items: flex-start; }
+  .menu-price { text-align: left; }
 }
 </style>
 </head>
@@ -198,132 +233,116 @@ footer {
   <div class="logo">こっから 千葉店</div>
   <nav>
     <ul>
-      <li><a href="#concept">こだわり</a></li>
-      <li><a href="#menu">お品書き</a></li>
+      <li><a href="#course">コース料理</a></li>
+      <li><a href="#single">お品書き</a></li>
       <li><a href="#info">店舗情報</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>和みの空間で味わう、極上のひととき</h1>
-  <p>千葉駅・千葉中央駅近く。旬の厳選素材と極上の酒でおもてなし。</p>
-  <a href="#info" class="btn">店舗情報・アクセス</a>
+  <h1>千葉の郷土料理と旬の鮮魚でおもてなし</h1>
+  <p>千葉駅近く。名物「さんが焼き」や地酒を楽しむ寛ぎの和空間。</p>
+  <a href="https://www.hotpepper.jp/strJ002647476/" target="_blank" class="btn">ホットペッパーでネット予約</a>
 </section>
 
-<section id="concept" class="container">
-  <h2 class="section-title">こっからのこだわり</h2>
-  <div class="concept-grid">
-    <div class="concept-card">
-      <h3>旬鮮料理とこだわり素材</h3>
-      <p>朝獲れ鮮魚のお造りや季節の味覚を丁寧に調理。素材本来のうま味を引き出す創作和食をご提供します。</p>
+<!-- コース料理セクション -->
+<section id="course" class="container">
+  <h2 class="section-title">ご宴会コース（2時間飲み放題付き）</h2>
+  
+  <div class="menu-card">
+    <div class="menu-info">
+      <span class="menu-tag">お手軽</span>
+      <div class="menu-title">【お得☆こっからコース】2時間飲み放題付き（全7品）</div>
+      <div class="menu-desc">手軽に「こっから」のお料理とお酒を楽しめるリーズナブルなご宴会コース。</div>
     </div>
-    <div class="concept-card">
-      <h3>落ち着いた大人の和空間</h3>
-      <p>少人数でのサク飲みから大人数での宴会・女子会まで、心地よくお過ごしいただける寛ぎの空間です。</p>
+    <div class="menu-price">
+      <div class="price-val">4,400円</div>
+      <div class="price-unit">(税込 / 1名様)</div>
     </div>
-    <div class="concept-card">
-      <h3>充実の飲み放題＆地酒</h3>
-      <p>お料理を引き立てる全国厳選の日本酒・焼酎、各種カクテル・サワーなど充実のドリンクラインナップ。</p>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-info">
+      <span class="menu-tag" style="background-color: #a80000;">大人気・おすすめ</span>
+      <div class="menu-title">【大人気！さんがコース】2時間飲み放題付き（全9品）</div>
+      <div class="menu-desc">先付、前菜、地魚盛り、本日のさんが焼き、名物なめろう、揚げ物、お食事まで揃った看板コース！</div>
+    </div>
+    <div class="menu-price">
+      <div class="price-val">5,500円</div>
+      <div class="price-unit">(税込 / 1名様)</div>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-info">
+      <span class="menu-tag">豪華・宴会</span>
+      <div class="menu-title">【こっから 極みコース】2時間飲み放題付き（全10品）</div>
+      <div class="menu-desc">自慢の「さんがコース」にさらに品数をプラスした、接待や各種ご宴会に最適なおすすめコース。</div>
+    </div>
+    <div class="menu-price">
+      <div class="price-val">6,600円</div>
+      <div class="price-unit">(税込 / 1名様)</div>
     </div>
   </div>
 </section>
 
-<section id="menu" class="container" style="background-color: #f0ede6;">
-  <h2 class="section-title">お品書き</h2>
-  <table class="menu-table">
-    <thead>
-      <tr>
-        <th>カテゴリー / メニュー名</th>
-        <th>詳細・こだわり</th>
-        <th>価格</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- コース料理 -->
-      <tr>
-        <td>
-          <span class="category-tag" style="background-color: #d4af37; color: #fff;">おすすめコース</span><br>
-          <strong>【2時間飲み放題付き】季節のおすすめ宴会コース（全8品）</strong>
-        </td>
-        <td>お造り盛り合わせ、自慢の逸品料理、旬の揚げ物、締めのご飯まで堪能できる定番コース。</td>
-        <td class="price">5,000円<br><small>(税込/1名様)</small></td>
-      </tr>
-      <tr>
-        <td>
-          <span class="category-tag" style="background-color: #d4af37; color: #fff;">贅沢コース</span><br>
-          <strong>【プレミアム飲み放題付き】極み銘酒と特選和食コース（全9品）</strong>
-        </td>
-        <td>厳選お造りに加え豪華メイン料理や名物を贅沢に味わう、特別なご宴会・接待向けのワンランク上のコース。</td>
-        <td class="price">6,500円<br><small>(税込/1名様)</small></td>
-      </tr>
-      <!-- 単品料理 -->
-      <tr>
-        <td>
-          <span class="category-tag">お造り</span><br>
-          <strong>本日の鮮魚 お造り盛り合わせ</strong>
-        </td>
-        <td>厳選された朝獲れ新鮮魚介の盛り合わせ。お酒との相性も抜群です。</td>
-        <td class="price">1,480円〜</td>
-      </tr>
-      <tr>
-        <td>
-          <span class="category-tag">名物・逸品</span><br>
-          <strong>自慢の手ごねつくね（卵黄添え）</strong>
-        </td>
-        <td>ジューシーな肉汁と特製タレ、濃密な卵黄が絡む看板メニュー。</td>
-        <td class="price">680円</td>
-      </tr>
-      <tr>
-        <td>
-          <span class="category-tag">揚げ物</span><br>
-          <strong>サクサク旬野菜と海老の天ぷら</strong>
-        </td>
-        <td>旬の味覚をカラッと揚げたサクサク衣の特製天ぷら。</td>
-        <td class="price">880円</td>
-      </tr>
-      <tr>
-        <td>
-          <span class="category-tag">お食事</span><br>
-          <strong>締めの一品 本格出汁茶漬け</strong>
-        </td>
-        <td>こだわり出汁が香る自慢の締めご飯（鮭・梅・鯛など）。</td>
-        <td class="price">580円</td>
-      </tr>
-      <tr>
-        <td>
-          <span class="category-tag">お酒</span><br>
-          <strong>全国厳選 日本酒・焼酎・各種ドリンク</strong>
-        </td>
-        <td>季節限定の銘酒や人気のハイボール、サワー、カクテルを各種取り揃えております。</td>
-        <td class="price">650円〜</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- 単品料理セクション -->
+<section id="single" class="container" style="background-color: #f0ede6; border-radius: 8px;">
+  <h2 class="section-title">名物・単品料理</h2>
+
+  <h3 class="sub-title">千葉郷土料理・鮮魚</h3>
+  <div class="item-grid">
+    <div class="item-box">
+      <span class="item-name">名物 さんが焼き</span>
+      <span class="item-price">名物</span>
+    </div>
+    <div class="item-box">
+      <span class="item-name">自家製 なめろう</span>
+      <span class="item-price">名物</span>
+    </div>
+    <div class="item-box">
+      <span class="item-name">朝獲れ 地魚お造り盛り合わせ</span>
+      <span class="item-price">時価・おすすめ</span>
+    </div>
+  </div>
+
+  <h3 class="sub-title">お酒・ドリンク</h3>
+  <div class="item-grid">
+    <div class="item-box">
+      <span class="item-name">千葉の地酒・厳選日本酒</span>
+      <span class="item-price">各種</span>
+    </div>
+    <div class="item-box">
+      <span class="item-name">プレミアム飲み放題変更</span>
+      <span class="item-price">+500円〜</span>
+    </div>
+  </div>
 </section>
 
+<!-- 店舗情報セクション -->
 <section id="info" class="container">
   <h2 class="section-title">店舗情報</h2>
   <table class="info-table">
     <tr>
       <th>店名</th>
-      <td>こっから 千葉店</td>
+      <td>こっから（地酒と鮮魚こだわる千葉郷土料理居酒屋）</td>
     </tr>
     <tr>
       <th>住所</th>
-      <td>千葉県千葉市中央区（千葉駅・千葉中央駅 徒歩圏内）</td>
+      <td>千葉県千葉市中央区新千葉1-7-3 CSB新千葉ビル102</td>
     </tr>
     <tr>
-      <th>営業時間</th>
-      <td>ディナー 17:00〜23:00（料理L.O. 22:00 ドリンクL.O. 22:30）</td>
+      <th>アクセス</th>
+      <td>JR千葉駅 西口より徒歩すぐ</td>
     </tr>
     <tr>
-      <th>定休日</th>
-      <td>不定休（ホットペッパー・公式Web等でご案内）</td>
-    </tr>
-    <tr>
-      <th>ご予約</th>
-      <td><a href="https://www.hotpepper.jp/strJ002647476/" target="_blank" style="color: #8b0000; text-decoration: underline; font-weight: bold;">ホットペッパーグルメでネット予約</a></td>
+      <th>ネット予約</th>
+      <td>
+        <a href="https://www.hotpepper.jp/strJ002647476/" target="_blank" style="color: #a80000; font-weight: bold; text-decoration: underline;">
+          ホットペッパーグルメ公式ページで空席確認・予約する ＞
+        </a>
+      </td>
     </tr>
   </table>
 </section>
