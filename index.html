@@ -1,293 +1,317 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>こっから 千葉 | 千葉中央の和みの居酒屋</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-      color: #2c2c2c;
-      background-color: #faf9f6;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ヘッダー */
-    header {
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #d4af37;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-    nav a {
-      font-size: 0.9rem;
-      color: #e0e0e0;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #d4af37;
-    }
-
-    /* ヒーローセクション */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      letter-spacing: 3px;
-      color: #f7f5f0;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: #dddddd;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #d4af37;
-      color: #1a1a1a;
-      padding: 12px 30px;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .btn:hover {
-      background-color: #b8952b;
-    }
-
-    /* コンテナ */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 40px;
-      position: relative;
-      color: #1a1a1a;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 2px;
-      background-color: #d4af37;
-      margin: 10px auto 0;
-    }
-
-    /* こだわり */
-    .concept-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .concept-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border-top: 3px solid #d4af37;
-    }
-    .concept-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      color: #1a1a1a;
-    }
-
-    /* メニュー */
-    .menu-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .menu-table th, .menu-table td {
-      padding: 15px 20px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-    }
-    .menu-table th {
-      background-color: #1a1a1a;
-      color: #d4af37;
-      font-weight: normal;
-    }
-    .price {
-      font-weight: bold;
-      color: #8b0000;
-      white-space: nowrap;
-    }
-
-    /* 店舗情報 */
-    .info-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .info-table th {
-      width: 30%;
-      background-color: #f2efe9;
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-      color: #333;
-    }
-    .info-table td {
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    /* フッター */
-    footer {
-      background-color: #1a1a1a;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.6rem; }
-      nav { display: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>こっから 千葉 | 千葉中央の和みの居酒屋</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  color: #2c2c2c;
+  background-color: #faf9f6;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ヘッダー */
+header {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #d4af37;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+nav a {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #d4af37;
+}
+/* ヒーローセクション */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  color: #f7f5f0;
+}
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #dddddd;
+}
+.btn {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #1a1a1a;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #b8952b;
+}
+/* コンテナ */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  position: relative;
+  color: #1a1a1a;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #d4af37;
+  margin: 10px auto 0;
+}
+/* こだわり */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.concept-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 3px solid #d4af37;
+}
+.concept-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+/* メニュー */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.menu-table th, .menu-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.menu-table th {
+  background-color: #1a1a1a;
+  color: #d4af37;
+  font-weight: normal;
+}
+.category-tag {
+  display: inline-block;
+  background-color: #f0ede6;
+  color: #555;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+.price {
+  font-weight: bold;
+  color: #8b0000;
+  white-space: nowrap;
+}
+/* 店舗情報 */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.info-table th {
+  width: 30%;
+  background-color: #f2efe9;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+.info-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+/* フッター */
+footer {
+  background-color: #1a1a1a;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.6rem; }
+  nav { display: none; }
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">こっから 千葉</div>
-    <nav>
-      <ul>
-        <li><a href="#concept">こだわり</a></li>
-        <li><a href="#menu">お品書き</a></li>
-        <li><a href="#info">店舗情報</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo">こっから 千葉</div>
+  <nav>
+    <ul>
+      <li><a href="#concept">こだわり</a></li>
+      <li><a href="#menu">お品書き</a></li>
+      <li><a href="#info">店舗情報</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h1>和みの空間で味わう、極上のひととき</h1>
-    <p>千葉中央駅すぐ。厳選された素材と旨い酒をご用意してお待ちしております。</p>
-    <a href="#info" class="btn">店舗情報・アクセス</a>
-  </section>
+<section class="hero">
+  <h1>和みの空間で味わう、極上のひととき</h1>
+  <p>千葉中央駅すぐ。厳選された素材と旨い酒をご用意してお待ちしております。</p>
+  <a href="#info" class="btn">店舗情報・アクセス</a>
+</section>
 
-  <section id="concept" class="container">
-    <h2 class="section-title">こっからのこだわり</h2>
-    <div class="concept-grid">
-      <div class="concept-card">
-        <h3>新鮮素材の厳選</h3>
-        <p>毎朝市場から仕入れる新鮮な鮮魚と地元千葉の旬野菜を使用した特別なお料理を提供いたします。</p>
-      </div>
-      <div class="concept-card">
-        <h3>落ち着いた大人の空間</h3>
-        <p>お一人様からご友人同士、特別な宴会までゆったりとお過ごしいただける居心地の良い空間です。</p>
-      </div>
-      <div class="concept-card">
-        <h3>充実の地酒・銘酒</h3>
-        <p>料理の味を引き立てる全国厳選の日本酒・焼酎を季節に合わせて取り揃えています。</p>
-      </div>
+<section id="concept" class="container">
+  <h2 class="section-title">こっからのこだわり</h2>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <h3>新鮮素材の厳選</h3>
+      <p>毎朝市場から仕入れる新鮮な鮮魚と地元千葉の旬野菜を使用した特別なお料理を提供いたします。</p>
     </div>
-  </section>
+    <div class="concept-card">
+      <h3>落ち着いた大人の空間</h3>
+      <p>お一人様からご友人同士、特別な宴会までゆったりとお過ごしいただける居心地の良い空間です。</p>
+    </div>
+    <div class="concept-card">
+      <h3>充実の地酒・銘酒</h3>
+      <p>料理の味を引き立てる全国厳選の日本酒・焼酎を季節に合わせて取り揃えています。</p>
+    </div>
+  </div>
+</section>
 
-  <section id="menu" class="container" style="background-color: #f0ede6;">
-    <h2 class="section-title">おすすめお品書き</h2>
-    <table class="menu-table">
-      <thead>
-        <tr>
-          <th>お料理</th>
-          <th>詳細</th>
-          <th>価格</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>本日の鮮魚 お造り盛り合わせ</strong></td>
-          <td>朝獲れ旬魚の厳選盛り合わせ。</td>
-          <td class="price">1,480円〜</td>
-        </tr>
-        <tr>
-          <td><strong>自慢の手ごねつくね</strong></td>
-          <td>濃厚な卵黄と特製タレが絡む名物料理。</td>
-          <td class="price">680円</td>
-        </tr>
-        <tr>
-          <td><strong>旬野菜と海老の天ぷら</strong></td>
-          <td>サクサクの衣と素材の甘み。</td>
-          <td class="price">880円</td>
-        </tr>
-        <tr>
-          <td><strong>本格出汁茶漬け</strong></td>
-          <td>締めに最適な特製出汁のご飯。</td>
-          <td class="price">580円</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+<section id="menu" class="container" style="background-color: #f0ede6;">
+  <h2 class="section-title">お品書き</h2>
+  <table class="menu-table">
+    <thead>
+      <tr>
+        <th>カテゴリー / お料理・お酒</th>
+        <th>詳細・こだわり</th>
+        <th>価格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class="category-tag">おすすめ刺身</span><br>
+          <strong>本日の鮮魚 お造り盛り合わせ</strong>
+        </td>
+        <td>朝獲れ新鮮魚介の厳選5種盛り。日本酒との相性抜群。</td>
+        <td class="price">1,480円〜</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="category-tag">逸品・名物</span><br>
+          <strong>自慢の手ごねつくね（卵黄添え）</strong>
+        </td>
+        <td>ジューシーな肉汁と特製タレ、濃密な卵黄が絡む逸品。</td>
+        <td class="price">680円</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="category-tag">揚げ物</span><br>
+          <strong>サクサク旬野菜と海老の天ぷら</strong>
+        </td>
+        <td>旬の味覚をカラッと揚げた特製天ぷら。</td>
+        <td class="price">880円</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="category-tag">お食事</span><br>
+          <strong>締めの一品 本格出汁茶漬け</strong>
+        </td>
+        <td>こだわり出汁が香る自慢の締めご飯（鮭・梅・鯛）。</td>
+        <td class="price">580円</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="category-tag">お酒</span><br>
+          <strong>全国厳選 日本酒（グラス/合）</strong>
+        </td>
+        <td>季節限定の生酒から入手困難な銘酒まで幅広く網羅。</td>
+        <td class="price">650円〜</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-  <section id="info" class="container">
-    <h2 class="section-title">店舗情報</h2>
-    <table class="info-table">
-      <tr>
-        <th>店名</th>
-        <td>こっから 千葉</td>
-      </tr>
-      <tr>
-        <th>住所</th>
-        <td>千葉県千葉市中央区（千葉中央駅・千葉駅 徒歩圏内）</td>
-      </tr>
-      <tr>
-        <th>営業時間</th>
-        <td>ディナー 17:00〜23:00（L.O. 22:30）</td>
-      </tr>
-      <tr>
-        <th>定休日</th>
-        <td>不定休</td>
-      </tr>
-    </table>
-  </section>
+<section id="info" class="container">
+  <h2 class="section-title">店舗情報</h2>
+  <table class="info-table">
+    <tr>
+      <th>店名</th>
+      <td>こっから 千葉</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>千葉県千葉市中央区（千葉中央駅・千葉駅 徒歩圏内）</td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>ディナー 17:00〜23:00（L.O. 22:30）</td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>不定休</td>
+    </tr>
+  </table>
+</section>
 
-  <footer>
-    <p>© こっから 千葉 All Rights Reserved. (Demo Page)</p>
-  </footer>
+<footer>
+  <p>© こっから 千葉 All Rights Reserved. (Demo Page)</p>
+</footer>
+
+</body>
+</html>
 
 </body>
 </html>
